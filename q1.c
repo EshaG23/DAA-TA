@@ -1,29 +1,36 @@
 #include <stdio.h>
 #include <stdbool.h>
 // Initialize: each element is its own parent
-void initialize(int Arr[], int N) {
+void initialize(int Arr[], int N) 
+{
     for (int i = 0; i < N; i++)
         Arr[i] = i;
 }
 // Find: check if A and B belong to the same set
-bool find(int Arr[], int A, int B) {
+bool find(int Arr[], int A, int B) 
+{
     return Arr[A] == Arr[B];
 }
 // Union: merge the set of A into the set of B
-void unionSet(int Arr[], int N, int A, int B) {
+void unionSet(int Arr[], int N, int A, int B) 
+{
     int TEMP = Arr[A];
-    for (int i = 0; i < N; i++) {
+    for (int i = 0; i < N; i++) 
+    {
         if (Arr[i] == TEMP)
             Arr[i] = Arr[B];
     }
 }
 // Print all sets after current operation
-void printSets(int Arr[], int N) {
+void printSets(int Arr[], int N) 
+{
     printf("Current Sets: ");
-    for (int i = 0; i < N; i++) {
+    for (int i = 0; i < N; i++) 
+    {
         printf("{");
         int group = Arr[i];
-        for (int j = 0; j < N; j++) {
+        for (int j = 0; j < N; j++) 
+        {
             if (Arr[j] == group)
                 printf("%d ", j);
         }
@@ -31,7 +38,8 @@ void printSets(int Arr[], int N) {
     }
     printf("\n");
 }
-int main() {
+int main() 
+{
     int N = 5;
     int Arr[N];
     // Step 1: Initialize
